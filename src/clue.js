@@ -62,21 +62,21 @@ const suspectsArray = [
 
 // Rooms Collection
 const roomsArray = [
-    "Dinning Room",
-    "Conservatory",
-    "Kitchen",
-    "Study",
-    "Library",
-    "Billiard Room",
-    "Lounge",
-    "Ballroom",
-    "Hall",
-    "spa",
-    "Living Room",
-    "Observatory",
-    "Theater",
-    "Guest House",
-    "Patio"  
+    {name: "Dinning Room"},
+    {name: "Conservatory"},
+    {name: "Kitchen"},
+    {name: "Study"},
+    {name: "Library"},
+    {name: "Billiard Room"},
+    {name: "Lounge"},
+    {name: "Ballroom"},
+    {name: "Hall"},
+    {name: "spa"},
+    {name: "Living Room"},
+    {name: "Observatory"},
+    {name: "Theater"},
+    {name: "Guest House"},
+    {name: "Patio"}  
 ];
 
 // Weapons Collection
@@ -99,7 +99,7 @@ function selectRandom(cardStack) {
     return randomCard;
 }
 
-function pickMistery() {
+function pickMystery() {
     let mistery = {};
         mistery.suspect = selectRandom(suspectsArray);
         mistery.weapon = selectRandom(weaponsArray);
@@ -110,8 +110,8 @@ function pickMistery() {
 // ITERATION 3
 
 function revealMystery(envelope) {
-    console.log(envelope.suspect.firstName, envelope.suspect.lastName + " killed Mr. Boddy using the "
-    + envelope.weapon.name + " in the " + envelope.room + "!")
+    let revelation = `${envelope.suspect.firstName} ${envelope.suspect.lastName} killed Mr. Boddy using the ${envelope.weapon.name} in the ${envelope.room.name}!`
+    return revelation
 }
 
-console.log(revealMystery());
+console.log(revealMystery(pickMystery()));
