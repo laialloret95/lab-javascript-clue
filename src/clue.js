@@ -107,6 +107,11 @@ function pickMistery() {
     return mistery
 }
 
-console.log(pickMistery);
-
 // ITERATION 3
+
+function revealMystery(envelope) {
+    console.log(envelope.suspect.firstName, envelope.suspect.lastName + " killed Mr. Boddy using the "
+    + envelope.weapon.name + " in the " + envelope.room + "!")
+}
+
+console.log(revealMystery());
